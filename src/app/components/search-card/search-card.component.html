@@ -1,0 +1,37 @@
+<a class="card m-1 modalItem text-decoration-none" type="button" title="detail" id="detail" (click)="openModal(cardModal)">
+    <img src="https://e-cdns-images.dzcdn.net/images/cover/{{md5_image}}/500x500-000000-80-0-0.jpg"
+        class="card-img-top" alt="{{title}}">
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{artistName}}</p>
+    </div>
+</a>
+<ng-content></ng-content>
+
+<div class="modal fade" id="cardModal" #cardModal tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Название трека: {{title}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <h2 class="fs-5">Исполнитель: {{artistName}}</h2>
+                    <img src="{{artistPicture}}" class="card-img-top" alt="@Model.Title">
+            
+                    <h3 class="modal-title fs-6" id="staticBackdropLabel">Длительность трека: {{duration}} мин.</h3>
+                    <h3 class="fw-medium fs-6" id="staticBackdropLabel">Demo: </h3>
+                    <audio controls="controls" height="100" width="100">
+                        <source src="{{preview}}" type="audio/mp3" />
+                        <embed height="100" width="100" src="horse.mp3" />
+                    </audio>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

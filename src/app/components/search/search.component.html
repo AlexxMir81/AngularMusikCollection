@@ -1,0 +1,10 @@
+<div class="row align-items-center" id="responseResults">
+    <div class="col-2" *ngFor="let card of cards">
+        <app-search-card [md5_image]="card.md5_image" [title]="card.title" [artistName]="card.artist.name"
+            [artistPicture]="card.artist.picture_big" [duration]="card.duration" [preview]="card.preview">
+        </app-search-card>
+    </div>
+    <div *ngIf="endOfSearch">
+        <h1 class="display-6">Поиск завершен</h1>
+    </div>
+   

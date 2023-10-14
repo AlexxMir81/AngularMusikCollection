@@ -71,7 +71,10 @@
               "browserTarget": "musik_coll:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "src/proxy.conf.json"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -93,9 +96,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "mode_modules/boostrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "mode_modules/boostrap/dist/css/bootstrap.min.js"
+            ]
           }
         }
       }

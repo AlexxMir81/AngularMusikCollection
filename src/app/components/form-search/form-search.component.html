@@ -1,0 +1,5 @@
+<form class="d-flex m-3">
+    <input class="form-control me-2" placeholder="Введите название трека, исполнителя..."
+     aria-label="Search" [(ngModel)]="keyword" name="keyword" type="text">
+    <a type="button" [routerLink]="['/search',keyword]" class="btn btn-outline-dark">Search</a>
+</form>
